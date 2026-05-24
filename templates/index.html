@@ -1,0 +1,27 @@
+<h1> List of players online: </h2>
+{%for i in range(0, online_len)%}
+    <h4>{{online_players[i]}}</h4>
+{%endfor%}
+
+
+<h1> List of players offline: </h2>
+{%for n in range(0, offline_len)%}
+    <h4>{{offline_players[n]}}</h4>
+{%endfor%}
+
+
+
+<form method="post" action="/restart" >
+  <input type=	"submit" value="restart"/>
+</form>
+
+<form method="post" action="{{ url_for('excute_input_commands')}}">
+<input type="text" name="command" value='teleport "player1" "player2"'>
+<input type="submit" id="submit" value='send'/>
+</form>
+
+<h2 style="color: red;"> Allowed commands:</h2>
+{%for i in range(0, allowed_commands_len)%}
+    <h4 style="color:green">{{allowed_commands[i]}}</h4>
+{%endfor%}
+

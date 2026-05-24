@@ -1,0 +1,10 @@
+<h1>{{message}}</h1><!--  -->
+
+<form method="post" action="/restart" >
+  <input type=	"submit" value="restart"/>
+</form>
+
+<form method="post" action="{{ url_for('excute_input_commands')}}">
+<input type="text" name="command" value='teleport "player1" "player2"'>
+<input type="submit" id="submit" value='send'/>
+</form>
